@@ -5,6 +5,7 @@ import { buttonStyle, styles, toolBarStyle } from "./styles";
 import data from '../../data';
 import HTMLParse from "../../nativeModules/HTMLParse";
 import container from "../../styles/container";
+import THEME from "../../values/THEME";
 class Details extends Component {
     constructor(props) {
         super(props);
@@ -54,7 +55,7 @@ class Details extends Component {
         }
         else {
             containerView = <View style={styles.container}>
-                <ProgressBarAndroid color={'#2bbeb6'}/>
+                <ProgressBarAndroid color={THEME.PRIMARY_COLOR}/>
             </View>;
         }
         return <ScrollView style={container}>

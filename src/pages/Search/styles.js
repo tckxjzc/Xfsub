@@ -1,5 +1,6 @@
+import THEME from "../../values/THEME";
 export let toolBarStyle = {
     container: {
-        backgroundColor: '#2bbeb6'
+        backgroundColor: THEME.PRIMARY_COLOR
     }
 };

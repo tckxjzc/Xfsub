@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { BackHandler, ToastAndroid, View, } from 'react-native';
-import { Toolbar } from "react-native-material-ui";
+import { Button, Toolbar } from "react-native-material-ui";
 import LoadParams, { TYPE } from "../../components/Lists/LoadParams";
-import { styles, toolBarStyle } from "./styles";
+import { buttonStyle, styles, toolBarStyle } from "./styles";
 import Lists from "../../components/Lists";
 const LOGOUT_TIME = 2000;
 class Home extends Component {
@@ -33,6 +33,9 @@ class Home extends Component {
                 loadParams.type = TYPE.SEARCH;
                 this.props.navigation.navigate('Search', { loadParams, title: this.text });
             }
+        };
+        this.goToTimeLine = () => {
+            this.props.navigation.navigate('TimeLine');
         };
     }
     componentDidMount() {
@@ -65,6 +68,10 @@ class Home extends Component {
             onChangeText: this.setText,
             onSubmitEditing: this.search
         }} style={toolBarStyle}/>
+            <View style={styles.topContainer}>
+                <Button onPress={this.goToTimeLine} style={buttonStyle} text={'新番时间表'} primary raised/>
+                
+            </View>
             <Lists navigation={this.props.navigation} loadParams={new LoadParams()}/>
             
                 

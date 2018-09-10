@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import {BackHandler, ToastAndroid, View,} from 'react-native';
-import {Toolbar} from "react-native-material-ui";
+import {Button, Toolbar} from "react-native-material-ui";
 import {NavigationScreenProp, NavigationState} from "react-navigation";
 import LoadParams, {TYPE} from "../../components/Lists/LoadParams";
-import {styles, toolBarStyle} from "./styles";
+import {buttonStyle, styles, toolBarStyle} from "./styles";
 import Lists from "../../components/Lists";
 
 type Props = {
@@ -72,6 +72,10 @@ class Home extends Component<Props> {
                 style={toolBarStyle}
 
             />
+            <View style={styles.topContainer}>
+                <Button onPress={this.goToTimeLine} style={buttonStyle} text={'新番时间表'} primary raised />
+                {/*<Button style={buttonStyle} text={'收藏'} primary raised />*/}
+            </View>
             <Lists navigation={this.props.navigation} loadParams={new LoadParams()}/>
             {/*<Card onPress={() => {*/}
                 {/*this.goToCategory(1, "动画");*/}
@@ -102,7 +106,9 @@ class Home extends Component<Props> {
             this.props.navigation.navigate('Search', {loadParams, title: this.text});
         }
     };
-
+    goToTimeLine=()=>{
+        this.props.navigation.navigate('TimeLine');
+    };
     goToCategory(category, title: string) {
         let loadParams = new LoadParams();
         loadParams.category = category;

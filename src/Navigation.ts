@@ -2,7 +2,7 @@ import {createStackNavigator,} from 'react-navigation';
 import Home from "./pages/Home";
 import Search from "./pages/Search";
 import Details from "./pages/Details";
-
+import TimeLine from "./pages/TimeLine";
 let Navigation = createStackNavigator({
     Home: {
         screen: Home
@@ -12,6 +12,9 @@ let Navigation = createStackNavigator({
     },
     Search: {
         screen: Search
+    },
+    TimeLine:{
+        screen:TimeLine
     },
 }, {
     cardStyle: {

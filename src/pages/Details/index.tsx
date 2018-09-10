@@ -7,6 +7,7 @@ import {buttonStyle, styles, toolBarStyle} from "./styles";
 import data from '../../data';
 import HTMLParse from "../../nativeModules/HTMLParse";
 import container from "../../styles/container";
+import THEME from "../../values/THEME";
 
 type Props = {
     navigation: NavigationScreenProp<NavigationState>
@@ -52,7 +53,7 @@ class Details extends Component<Props> {
             </View>
         } else {
             containerView = <View style={styles.container}>
-                <ProgressBarAndroid color={'#2bbeb6'}/>
+                <ProgressBarAndroid color={THEME.PRIMARY_COLOR}/>
             </View>
         }
 

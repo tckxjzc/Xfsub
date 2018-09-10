@@ -1,9 +1,10 @@
 import {StyleSheet,Dimensions} from 'react-native';
+import THEME from "../../values/THEME";
 
 let width=Dimensions.get("window").width*0.4;
 export let toolBarStyle = {
     container: {
-        backgroundColor: '#2bbeb6'
+        backgroundColor: THEME.PRIMARY_COLOR
     },
     // titleText:{
     //     fontSize:12
@@ -12,7 +13,7 @@ export let toolBarStyle = {
 export let buttonStyle={
     container:{
         marginTop:20,
-        backgroundColor: '#2bbeb6',
+        backgroundColor: THEME.PRIMARY_COLOR,
     },
     text:{
         color:'#fff'

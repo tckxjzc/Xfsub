@@ -73,7 +73,7 @@ class Home extends Component<Props> {
 
             />
             <View style={styles.topContainer}>
-                <Button onPress={this.goToTimeLine} style={buttonStyle} text={'新番时间表'} primary raised />
+                <Button onPress={this.goToTimeLine} style={buttonStyle} text={'新番列表'} primary raised />
                 {/*<Button style={buttonStyle} text={'收藏'} primary raised />*/}
             </View>
             <Lists navigation={this.props.navigation} loadParams={new LoadParams()}/>

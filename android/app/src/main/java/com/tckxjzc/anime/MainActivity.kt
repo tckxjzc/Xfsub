@@ -6,18 +6,18 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Build
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.Settings
 import android.support.v7.app.AlertDialog
+import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.KeyEvent
 import com.facebook.react.ReactInstanceManager
 import com.facebook.react.ReactRootView
-import com.facebook.react.bridge.JSBundleLoader
 import com.facebook.react.common.LifecycleState
 import com.facebook.react.modules.core.DefaultHardwareBackBtnHandler
 import com.facebook.react.shell.MainReactPackage
+import com.microsoft.codepush.react.CodePush
 import com.oblador.vectoricons.VectorIconsPackage
 import com.tckxjzc.anime.react.HTMLParsePackage
 import org.devio.rn.splashscreen.SplashScreen
@@ -32,12 +32,14 @@ class MainActivity : AppCompatActivity(), DefaultHardwareBackBtnHandler {
         SplashScreen.show(this, true);
         reactInstanceManager = ReactInstanceManager.builder()
                 .setApplication(application)
-                .setBundleAssetName("index.android.bundle")
+//                .setBundleAssetName("index.android.bundle")
                 .setJSMainModulePath("index")
                 .addPackage(MainReactPackage())
                 .addPackage(VectorIconsPackage())
                 .addPackage(SplashScreenReactPackage())
                 .addPackage(HTMLParsePackage())
+                .addPackage(CodePush("ty4rs_m-b-z5e4PGHxjnsDpM2Ztn955c3ac9-d46b-4d2e-843a-fcfc3ec1ec31",applicationContext,BuildConfig.DEBUG))
+                .setJSBundleFile(CodePush.getJSBundleFile())
                 .setUseDeveloperSupport(BuildConfig.DEBUG)
                 .setInitialLifecycleState(LifecycleState.RESUMED)
                 .build()

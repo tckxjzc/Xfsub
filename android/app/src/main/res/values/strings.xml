@@ -1,3 +1,5 @@
 <resources>
+    <string moduleConfig="true" name="reactNativeCodePush_androidDeploymentKey"></string>
     <string name="app_name">动漫下载</string>
+    <string name="CODE_PUSH_APK_BUILD_TIME">1536573723241</string>
 </resources>

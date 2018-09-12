@@ -1,12 +1,10 @@
 import React, {Component} from 'react';
-import {
-    View,
-} from 'react-native';
+import codePush from "react-native-code-push";
+import {View} from 'react-native';
 import Navigation from "./Navigation";
 import SplashScreen from 'react-native-splash-screen';
-type Props = {
 
-};
+type Props = {};
 
 class App extends Component<Props> {
     /**
@@ -20,8 +18,8 @@ class App extends Component<Props> {
 
     componentDidMount() {
         this.mounted = true;
+        codePush.sync();
         SplashScreen.hide();
-
     }
 
     componentWillUnmount() {

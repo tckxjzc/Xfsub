@@ -69,7 +69,7 @@ class Home extends Component {
             onSubmitEditing: this.search
         }} style={toolBarStyle}/>
             <View style={styles.topContainer}>
-                <Button onPress={this.goToTimeLine} style={buttonStyle} text={'新番时间表'} primary raised/>
+                <Button onPress={this.goToTimeLine} style={buttonStyle} text={'新番列表'} primary raised/>
                 
             </View>
             <Lists navigation={this.props.navigation} loadParams={new LoadParams()}/>
